@@ -1,6 +1,7 @@
-# PES ASIC course
+# VLSI physical design for ASICs
 Repository containing content for course "VLSI physical design of ASIC"
 
+Detailed description of course content can be found in the repository's wiki
 The following is done on a Fedora 38 Workstation with a 256 GB SSD and 8 GB RAM.
 # Installation
 
@@ -66,20 +67,12 @@ This is free software; see the source for copying conditions.  There is NO
 warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.```
 ```
 If not successful, raise an issue in my repository with details about your system and which steps fails.
-# Course content
+# Labwork results
+
 ## Day 1 
 **Introduction to RISC-V ISA and GNU compiler toolchain**
-
-### 1.Introduction to RISC-V basic keywords
-
-### 2.Labwork for RISC-V software toolchain
-### 3.Integer number description
+### Labwork for RISC-V software toolchain
 ## Day 2 
-### 1.Application Binary Interface (ABI)
-### 2.Labwork using ABI function calls
-### 3.Basic verification flow using iverilog
+### Labwork using ABI function calls
 ## Day 3
-### 1.Combinational logic in TL-Verilog using Makerchip
-### 2.Sequential logic
-### 3.Pipelined logic
-### 4.Validation and wrap-up
+
