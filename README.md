@@ -1,7 +1,7 @@
 # VLSI physical design for ASICs
 Repository containing content for course "VLSI physical design of ASIC"
 
-Detailed description of course content can be found in the repository's wiki
+Detailed description of course content can be found in the [repository's wiki](pes_asic_class#wiki)
 The following is done on a Fedora 38 Workstation with a 256 GB SSD and 8 GB RAM.
 # Installation
 
@@ -56,7 +56,7 @@ OR
 
 `echo 'export PATH=$PATH:/your/preferred/directory' >> ~/.bashrc;source ~/.bashrc`
 
-9.** Check if successful**
+9.**Check if successful**
 
 `riscv64-unknown-elf-gcc --version`
 
@@ -240,5 +240,9 @@ blt a3, a2, loop //If a3 is less than a2, branch to label named <loop>
 add a0, a4, zero //Store final result to register a0 so that it can be read by main program
 ret
 ```
+
+**Execution results**
+![image](https://github.com/SR-Rishab/pes_asic_class/assets/107171044/622b8f1a-171a-4dcd-ab49-22272ec7f092)
+
 ## Day 3
 
