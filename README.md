@@ -34,11 +34,11 @@ OR
 
 5.**Set up installation directory**
 
-`./configure --prefix=/opt/riscv`
+`./configure --prefix=/opt/riscv --enable-multilib`
 
 OR
 
-`./configure --prefix=/your/preferred/directory`
+`./configure --prefix=/your/preferred/directory ----enable-multilib`
 
 6.**Install**
 
