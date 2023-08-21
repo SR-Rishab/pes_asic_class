@@ -263,5 +263,13 @@ ret
 **Execution results**
 ![image](https://github.com/SR-Rishab/pes_asic_class/assets/107171044/622b8f1a-171a-4dcd-ab49-22272ec7f092)
 
+### C-program on RISC-V CPU
+
+![Screenshot from 2023-08-21 21-29-23](https://github.com/SR-Rishab/pes_asic_class/assets/107171044/6a887f0f-b4df-4394-a9c4-3cdd4c22e856)
+
+**firmware.hex**
+
+![Screenshot from 2023-08-21 21-29-10](https://github.com/SR-Rishab/pes_asic_class/assets/107171044/716e7c9a-2ba2-402b-9a24-09eca5ac5082)
+
 ## Day 3
 
