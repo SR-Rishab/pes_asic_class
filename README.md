@@ -113,7 +113,8 @@ source ~/.zshrc`
 
 4. **Configure and install**
 
-```../configure --prefix=/preffered/directory/ --host=riscv64-unknown-elf
+```
+   ../configure --prefix=/preffered/directory/ --host=riscv64-unknown-elf
    make -j8 # because i have 8 core CPU
    [sudo] make install
 ```
@@ -127,7 +128,25 @@ OR if you are using zsh
 `echo 'export PATH=$PATH:/preffered/directory/bin' >> ~/.zshrc
 source ~/.zshrc`
 
+### Install iverilog
+1.**Install dependencies**
 
+`sudo dnf install autoconf flex gcc bison g++`
+
+2.**Clone the iverilog repository in your preffered directory**
+
+`git clone https://github.com/steveicarus/iverilog.git`
+
+3.**Configure and install**
+
+```
+cd iverilog
+sh autoconf.sh
+./configure
+sudo su
+make install
+sudo dnf install iverilog
+```
 # Labwork results
 ## Day 1 
 **Introduction to RISC-V ISA and GNU compiler toolchain**
