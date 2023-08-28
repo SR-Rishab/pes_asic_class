@@ -2,7 +2,7 @@
 Repository containing content for course "VLSI physical design of ASIC"
 
 Detailed description of course content can be found in the [repository's wiki](pes_asic_class#wiki)
-The following is done on a Fedora 38 Workstation with a 256 GB SSD and 8 GB RAM.
+The following is done on a Fedora 38 Workstation with a 256 GB SSD and 8 GB RAM and an Intel i5 8th gen CPU with Intel UHD integrated graphics card.
 # Installation
 
 Installation can be replicated on any Linux distribution (eg.Ubuntu,Arch,NixOS) with slight modifications. 
@@ -323,3 +323,27 @@ Write simplified netlist file using `write_verilog -noattr good_mux_netlist.v`
 ![Screenshot from 2023-08-28 17-48-38](https://github.com/SR-Rishab/pes_asic_class/assets/107171044/42b343fc-be7c-4433-87e4-d41e80d79e45)
 
 ![Screenshot from 2023-08-28 17-49-17](https://github.com/SR-Rishab/pes_asic_class/assets/107171044/b3b17618-4693-4256-ae3b-e0afdb155e96)
+
+### Day 2
+**Timing libs, hierarchical vs flat synthesis and efficient flop coding styles**
+
+#### Hierarchical vs Flat synthesis
+
+Read the multiple_modules verilog file
+
+![Screenshot from 2023-08-28 18-38-42](https://github.com/SR-Rishab/pes_asic_class/assets/107171044/0092bef8-786a-4fab-935a-5b7be71555d4)
+
+Synthesis of top module
+
+![Screenshot from 2023-08-28 18-48-21](https://github.com/SR-Rishab/pes_asic_class/assets/107171044/d1a29383-bb1a-441c-a932-0ad2ec8a4b87)
+![Screenshot from 2023-08-28 18-39-13](https://github.com/SR-Rishab/pes_asic_class/assets/107171044/bb950f2a-50dd-4e4d-b4f9-209197935f1d)
+
+Block diagram of heirarchical synthesis
+
+![Screenshot from 2023-08-28 18-51-11](https://github.com/SR-Rishab/pes_asic_class/assets/107171044/c015f49e-19d4-49ba-a252-90a7cdc99eef)
+
+Block level diagram of flat synthesis
+
+![Screenshot from 2023-08-28 19-06-09](https://github.com/SR-Rishab/pes_asic_class/assets/107171044/7487f8d9-31e5-4576-94b8-d124be89d801)
+
+
