@@ -522,11 +522,180 @@ show
    <summary>
       Sequential optimizations
    </summary>
+<details>
+<summary>dff_const1</summary>
+
++ Simulation
+```
+iverilog dff_const1.v tb_dff_const1.v
+./a.out
+gtkwave tb_dff_const1.vcd
+```
+![Screenshot from 2023-08-30 09-05-12](https://github.com/SR-Rishab/pes_asic_class/assets/107171044/1e2ee19e-8b7e-4d00-953e-2423cb118982)
+
++ Synthesis
+```
+yosys
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog dff_const1.v
+synth -top dff_const1
+dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+```
+
+![Screenshot from 2023-08-30 09-06-43](https://github.com/SR-Rishab/pes_asic_class/assets/107171044/0f91d4c7-212d-4c11-b429-4164f774b983)
+![Screenshot from 2023-08-30 09-07-37](https://github.com/SR-Rishab/pes_asic_class/assets/107171044/0d895983-43f8-45b4-9ff4-6dd03481ffd2)
+
 </details>
 <details>
-   <summary>
-      Sequenctial optimizations for unused outputs
-   </summary>
+   <summary>dff_const2</summary>
+
++ Simulation
+```
+iverilog dff_const2.v tb_dff_const2.v
+./a.out
+gtkwave tb_dff_const3.vcd
+```
+![Screenshot from 2023-08-30 09-19-00](https://github.com/SR-Rishab/pes_asic_class/assets/107171044/d072e8f9-51c7-436e-91b3-60a332b17f9e)
+
++ Synthesis
+```
+yosys
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog dff_const2.v
+synth -top dff_const2
+dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+```
+![Screenshot from 2023-08-30 09-20-08](https://github.com/SR-Rishab/pes_asic_class/assets/107171044/408708f3-1f8b-481d-9f1d-e60d1c562a31)
+![Screenshot from 2023-08-30 09-20-19](https://github.com/SR-Rishab/pes_asic_class/assets/107171044/b5045356-389a-4061-9b40-86414741f433)
+
+</details>
+<details>
+   <summary>dff_const3</summary>
+
++ Simulation
+```
+iverilog dff_const3.v tb_dff_const3.v
+./a.out
+gtkwave tb_dff_const3.vcd
+```
+![Screenshot from 2023-08-30 09-24-14](https://github.com/SR-Rishab/pes_asic_class/assets/107171044/6ffb9c85-1fd7-4dde-be09-9d5bed847ebe)
+
+
++ Synthesis
+```
+yosys
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog dff_const3.v
+synth -top dff_const3
+dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+```
+
+![Screenshot from 2023-08-30 09-24-49](https://github.com/SR-Rishab/pes_asic_class/assets/107171044/c5358772-c977-42b5-9c22-779b286ff14f)
+![Screenshot from 2023-08-30 09-25-17](https://github.com/SR-Rishab/pes_asic_class/assets/107171044/f667f478-0d2c-4255-b5f9-8751a038569a)
+
+</details>
+<details>
+   <summary>dff_const4</summary>
+
++ Simulation
+```
+iverilog dff_const4.v tb_dff_const4.v
+./a.out
+gtkwave tb_dff_const4.vcd
+```
+
+![Screenshot from 2023-08-30 09-52-43](https://github.com/SR-Rishab/pes_asic_class/assets/107171044/58e50e53-a935-4f49-9dfa-66c95261ccaa)
+
+
++ Synthesis
+```
+yosys
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog dff_const4.v
+synth -top dff_const4
+dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+```
+![Screenshot from 2023-08-30 09-53-53](https://github.com/SR-Rishab/pes_asic_class/assets/107171044/29a0f2f2-7c0d-4b03-8b8a-2135fadca413)
+![Screenshot from 2023-08-30 09-53-36](https://github.com/SR-Rishab/pes_asic_class/assets/107171044/32016718-ebc3-4e1e-bee3-8ee587da2304)
+
+
+   
+</details>
+<details>
+<summary>dff_const5</summary>
+
++ Simulation
+```
+iverilog dff_const5.v tb_dff_const5.v
+./a.out
+gtkwave tb_dff_const5.vcd
+```
+
+![Screenshot from 2023-08-30 09-55-46](https://github.com/SR-Rishab/pes_asic_class/assets/107171044/2381f6ca-27ee-4107-97d5-6175d51e1e8e)
+
+
++ Synthesis
+```
+yosys
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog dff_const5.v
+synth -top dff_const5
+dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+```
+
+![Screenshot from 2023-08-30 09-56-26](https://github.com/SR-Rishab/pes_asic_class/assets/107171044/3ad5f2b4-9a76-49b7-a1db-cff28999d9d7)
+![Screenshot from 2023-08-30 09-56-11](https://github.com/SR-Rishab/pes_asic_class/assets/107171044/df96c3ee-926d-49ae-ae59-56ff512e7c99)
+
+</details>
+</details>
+<details>
+<summary>
+Sequenctial optimizations for unused outputs
+</summary>
+
+<details>
+<summary>counter_opt</summary>
+
+```
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog counter_opt.v
+synth -top counter_opt
+dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+```
+
+![Screenshot from 2023-08-30 09-59-26](https://github.com/SR-Rishab/pes_asic_class/assets/107171044/0e77158b-6439-4876-b5d4-fd323a498f2a)
+![Screenshot from 2023-08-30 09-59-45](https://github.com/SR-Rishab/pes_asic_class/assets/107171044/d0800ce8-59e1-4e0d-ba76-4d0908a6dfb8)
+
+</details>
+
+<details>
+<summary>counter_opt2</summary>
+
+```
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog counter_opt2.v
+synth -top counter_opt
+dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+```
+
+![Screenshot from 2023-08-30 10-02-00](https://github.com/SR-Rishab/pes_asic_class/assets/107171044/541ba50f-2e8a-45ea-abb4-9a4e82dcc2bc)
+![Screenshot from 2023-08-30 10-03-17](https://github.com/SR-Rishab/pes_asic_class/assets/107171044/36181661-8322-433f-a4c7-72fef178e8aa)
+
+</details>
 </details>
 </details>
 <details>
