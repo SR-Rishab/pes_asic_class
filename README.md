@@ -701,5 +701,127 @@ show
 <details>
 <summary>Day 6</summary>   
 
-   
+# GLS and synthesis-simulation mismatch
+<details>
+<summary>ternary_operator_mux</summary>
+
+**Simulation**
+
+```
+iverilog ternary_operator_mux.v tb_ternary_operator_mux.v
+./a.out
+gtkwave tb_ternary_operator_mux.vcd
+```
+![Screenshot from 2023-09-02 10-21-46](https://github.com/SR-Rishab/pes_asic_class/assets/107171044/a59cea8c-7862-400d-86ba-aef5a79454fb)
+![Screenshot from 2023-09-02 10-22-01](https://github.com/SR-Rishab/pes_asic_class/assets/107171044/ca5d6867-4393-49c2-999b-295b469d4f57)
+
+**Synthesis**
+
+```
+yosys
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog ternary_operator_mux.v
+synth -top ternary_operator_mux
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+```
+
+![Screenshot from 2023-09-02 10-23-20](https://github.com/SR-Rishab/pes_asic_class/assets/107171044/002dfda2-a3da-4e90-9e52-a496cfee1873)
+![Screenshot from 2023-09-02 10-23-49](https://github.com/SR-Rishab/pes_asic_class/assets/107171044/e0a926ae-6721-4fed-8ab3-0dd07e3c06a7)
+
+**Gate-Level-Synthesis**
+
+```
+iverilog ../my_lib/verilog_model/primitives.v ../my_lib/verilog_model/sky130_fd_sc_hd.v ternary_operator_mux_net.v tb_ternary_operator_mux.v
+./a.out
+gtkwave tb_bad_mux.vcd
+```
+
+![Screenshot from 2023-09-02 10-26-16](https://github.com/SR-Rishab/pes_asic_class/assets/107171044/f460a901-d7cc-425e-8969-8b4f279894de)
+![Screenshot from 2023-09-02 10-26-05](https://github.com/SR-Rishab/pes_asic_class/assets/107171044/cd86b42f-17cc-4658-97d6-2886cef8cb86)
+
+</details>  
+
+<details>
+<summary>bad_mux</summary>
+
+**Simulation**
+
+```
+iverilog bad_mux.v tb_bad_mux.v
+./a.out
+gtkwave tb_bad_mux.vcd
+```
+
+![Screenshot from 2023-09-02 10-27-32](https://github.com/SR-Rishab/pes_asic_class/assets/107171044/0f71b4b7-fe84-42fc-9b21-3f5ba977cb07)
+![Screenshot from 2023-09-02 10-27-51](https://github.com/SR-Rishab/pes_asic_class/assets/107171044/16fd85c8-7dc9-487d-a61f-b6d0ff2b2fc5)
+
+**Synthesis**
+
+```
+yosys
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog bad_mux.v
+synth -top bad_mux
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+```
+
+![Screenshot from 2023-09-02 10-30-15](https://github.com/SR-Rishab/pes_asic_class/assets/107171044/44feb68f-93fd-4c4b-a109-65f5496a3d0e)
+![Screenshot from 2023-09-02 10-30-43](https://github.com/SR-Rishab/pes_asic_class/assets/107171044/4e96180e-4350-4cc8-b5d7-dd83cf4d69ff)
+
+**Gate-Level-Synthesis**
+
+```
+iverilog ../my_lib/verilog_model/primitives.v ../my_lib/verilog_model/sky130_fd_sc_hd.v bad_mux_net.v tb_bad_mux.v
+./a.out
+gtkwave tb_bad_mux.vcd
+```
+
+![Screenshot from 2023-09-02 10-32-30](https://github.com/SR-Rishab/pes_asic_class/assets/107171044/d799d235-1dc5-4be7-beb9-82ea42e632d5)
+![Screenshot from 2023-09-02 10-32-55](https://github.com/SR-Rishab/pes_asic_class/assets/107171044/acfa4f00-848e-4991-9fe5-a2597a64140a)
+</details>
+
+# Synth-Sim Mismatch for Blocking Statement
+
+<details>
+<summary>blocking_caveat</summary>
+
+ **Simulation**
+
+```
+iverilog blocking_caveat.v tb_blocking_caveat.v
+./a.out
+gtkwave tb_blocking_caveat.vcd
+```
+
+![Screenshot from 2023-09-02 10-37-07](https://github.com/SR-Rishab/pes_asic_class/assets/107171044/f9076d0a-3f0f-48b1-bbff-2718c526b7f6)
+![Screenshot from 2023-09-02 10-37-22](https://github.com/SR-Rishab/pes_asic_class/assets/107171044/ecaecd1f-5e3f-4c1e-ad99-95f5ae0cb4e5)
+
+ **Synthesis**
+
+```
+yosys
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog blocking_caveat.v
+synth -top blocking_caveat
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+```
+
+![Screenshot from 2023-09-02 10-39-23](https://github.com/SR-Rishab/pes_asic_class/assets/107171044/dc173649-0105-43e5-8f31-024100d024c1)
+![Screenshot from 2023-09-02 10-39-48](https://github.com/SR-Rishab/pes_asic_class/assets/107171044/1ad774d1-0257-4f78-87d1-74155b60b810)
+
+ **Gate-Level-Simulation**
+
+```
+iverilog ../my_lib/verilog_model/primitives.v ../my_lib/verilog_model/sky130_fd_sc_hd.v blocking_caveat_net.v tb_blocking_caveat.v
+./a.out
+gtkwave tb_blocking_caveat.vcd
+```
+
+![Screenshot from 2023-09-02 10-40-35](https://github.com/SR-Rishab/pes_asic_class/assets/107171044/536489c8-466e-4b0b-af9b-4c4fe1fe78e4)
+![Screenshot from 2023-09-02 10-40-54](https://github.com/SR-Rishab/pes_asic_class/assets/107171044/f0b077df-5a21-4d35-9555-16862f22175b)
+
+</details> 
 </details>
